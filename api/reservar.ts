@@ -1,6 +1,11 @@
+import type { VercelRequest, VercelResponse } from '@vercel/node'
+
 import { AREAS, HORAS } from './_supabase'
 
-export default async function handler(req, res) {
+export default async function handler(
+  req: VercelRequest,
+  res: VercelResponse
+) {
   if (req.method !== 'POST') {
     return res.status(405).json({
       error: 'Método no permitido.'
@@ -13,17 +18,17 @@ export default async function handler(req, res) {
   } = process.env
 
   if (!WEB1_API_URL || !WEB1_API_SECRET) {
-  console.error('Configuración Web1:', {
-    WEB1_API_URL: !!WEB1_API_URL,
-    WEB1_API_SECRET: !!WEB1_API_SECRET
-  })
+    console.error('Configuración Web1:', {
+      WEB1_API_URL: !!WEB1_API_URL,
+      WEB1_API_SECRET: !!WEB1_API_SECRET
+    })
 
-  return res.status(500).json({
-    error: 'Configuración de conexión con Web1 incompleta.'
-  })
-}
+    return res.status(500).json({
+      error: 'Configuración de conexión con Web1 incompleta.'
+    })
+  }
 
-  const b = req.body || {}
+  const b = (req.body || {}) as Record<string, unknown>
 
   // Honeypot antispam
   if (b.web) {
@@ -32,7 +37,7 @@ export default async function handler(req, res) {
     })
   }
 
-  const s = (value, max) =>
+  const s = (value: unknown, max: number): string =>
     typeof value === 'string'
       ? value.trim().slice(0, max)
       : ''
@@ -41,13 +46,12 @@ export default async function handler(req, res) {
   const paciente = s(b.paciente, 6)
   const fecha = s(b.fecha, 10)
   const hora = s(b.hora, 5)
-
   const nombre = s(b.nombre, 120)
   const telefono = s(b.telefono, 30)
   const email = s(b.email, 160)
   const notas = s(b.notas, 500)
 
-  const edad =
+  const edad: number | null =
     b.edad === undefined ||
     b.edad === null ||
     b.edad === ''
@@ -67,7 +71,10 @@ export default async function handler(req, res) {
       : !['adulto', 'nino'].includes(paciente)
       ? 'Tipo de paciente no válido.'
       : paciente === 'nino' &&
-        !(Number.isInteger(edad) && edad >= 0 && edad <= 17)
+        !(typeof edad === 'number' &&
+          Number.isInteger(edad) &&
+          edad >= 0 &&
+          edad <= 17)
       ? 'Edad no válida.'
       : !/^\d{4}-\d{2}-\d{2}$/.test(fecha) ||
         isNaN(dia.getTime()) ||
@@ -89,7 +96,7 @@ export default async function handler(req, res) {
       error
     })
   }
- 
+
   const reservation = {
     area,
     paciente,
