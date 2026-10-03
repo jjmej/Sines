@@ -89,13 +89,7 @@ export default async function handler(req, res) {
       error
     })
   }
-  // Validación de notas
-  if (notas.length > 0 && notas.length < 10) {
-    return res.status(400).json({
-      error: 'Si escribes notas, deben tener al menos 10 caracteres.'
-    })
-  }
-
+ 
   const reservation = {
     area,
     paciente,
