@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-import { admin, AREAS } from './_supabase'
+import { admin, AREAS } from './_supabase.js'
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const { area, fecha } = req.query

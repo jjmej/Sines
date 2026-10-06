@@ -1,6 +1,22 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
 
-import { AREAS, HORAS } from './_supabase'
+const AREAS = [
+  'psicologia',
+  'logopedia',
+  'fisioterapia',
+  'nutricion'
+]
+
+const HORAS = [
+  '9:00',
+  '10:00',
+  '11:00',
+  '12:00',
+  '16:00',
+  '17:00',
+  '18:00',
+  '19:00'
+]
 
 export default async function handler(
   req: VercelRequest,
@@ -58,7 +74,6 @@ export default async function handler(
       ? null
       : Number(b.edad)
 
-  // Validación de fecha
   const dia = new Date(`${fecha}T12:00:00`)
 
   const manana = new Date()
