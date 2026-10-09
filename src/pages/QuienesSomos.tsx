@@ -11,11 +11,10 @@ const ICONOS = {
 };
 
 const VALORES = [
-  { nombre: "Confianza", color: "bg-[--salvia]", fondo: "bg-[--salvia]/20" },
-  { nombre: "Escucha", color: "bg-[--azul]", fondo: "bg-[--azul]/20" },
-  { nombre: "Acompañamiento", color: "bg-[--verde]", fondo: "bg-[--verde]/20" },
-  { nombre: "Calidad", color: "bg-[--naranja]", fondo: "bg-[--naranja]/20" },
-];
+  { nombre: "Confianza", color: "bg-[--salvia]"},
+  { nombre: "Escucha", color: "bg-[--azul]"},
+  { nombre: "Acompañamiento", color: "bg-[--verde]"},
+  { nombre: "Calidad", color: "bg-[--naranja]"},];
 
 export default function QuienesSomos() {
   useTitle("Quiénes somos - Sinestesya");
@@ -42,29 +41,32 @@ export default function QuienesSomos() {
 
           {/* Discipline Logos Bar */}
           <div className="mb-16 grid grid-cols-2 justify-center gap-4 md:grid-cols-4">
-            {AREAS.map((area) => {
-              const Icono = ICONOS[area.slug];
+  {AREAS.map((area) => {
+    const Icono = ICONOS[area.slug];
 
-              return (
-                <div
-                  key={area.slug}
-                  className="flex cursor-pointer flex-col items-center gap-2 rounded-xl p-4 transition-colors hover:bg-[--panel]"
-                >
-                  {Icono && (
-                    <Icono
-                      size={40}
-                      strokeWidth={1.5}
-                      aria-hidden="true"
-                      className="text-[--ink] transition-transform hover:scale-110"
-                    />
-                  )}
-                  <p className="text-xs font-medium text-[--soft]">
-                    {area.nombre}
-                  </p>
-                </div>
-              );
-            })}
+    return (
+      <div
+        key={area.slug}
+        className="flex cursor-pointer flex-col items-center gap-2 rounded-xl p-4 transition-colors hover:bg-[--panel]"
+      >
+        {Icono && (
+          /* Usa area.soft para un fondo suave o area.bg para color sólido */
+          <div className={`flex items-center justify-center rounded-full p-3 transition-transform hover:scale-110 ${area.soft}`}>
+            <Icono
+              size={32}
+              strokeWidth={1.5}
+              aria-hidden="true"
+              className="text-[--ink]"
+            />
           </div>
+        )}
+        <p className="text-xs font-medium text-[--soft]">
+          {area.nombre}
+        </p>
+      </div>
+    );
+  })}
+</div>
 
           {/* Main Content */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -131,10 +133,6 @@ export default function QuienesSomos() {
                     key={valor.nombre}
                     className="flex items-start rounded-lg p-3 transition-colors hover:bg-[--line]/50"
                   >
-                    <span
-                      className={`mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full ${valor.fondo}`}
-                    >
-                    </span>
                     <span
                       className={`mr-3 mt-1 h-3 w-3 shrink-0 rounded-full ${valor.color}`}
                     />
