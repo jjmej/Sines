@@ -11,10 +11,10 @@ const ICONOS = {
 };
 
 const VALORES = [
-  { nombre: "Confianza", color: "bg-[--salvia]" },
-  { nombre: "Escucha", color: "bg-[--azul]" },
-  { nombre: "Acompañamiento", color: "bg-[--verde]" },
-  { nombre: "Calidad", color: "bg-[--naranja]" },
+  { nombre: "Confianza", color: "bg-[--salvia]", fondo: "bg-[--salvia]/20" },
+  { nombre: "Escucha", color: "bg-[--azul]", fondo: "bg-[--azul]/20" },
+  { nombre: "Acompañamiento", color: "bg-[--verde]", fondo: "bg-[--verde]/20" },
+  { nombre: "Calidad", color: "bg-[--naranja]", fondo: "bg-[--naranja]/20" },
 ];
 
 export default function QuienesSomos() {
@@ -131,6 +131,10 @@ export default function QuienesSomos() {
                     key={valor.nombre}
                     className="flex items-start rounded-lg p-3 transition-colors hover:bg-[--line]/50"
                   >
+                    <span
+                      className={`mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full ${valor.fondo}`}
+                    >
+                    </span>
                     <span
                       className={`mr-3 mt-1 h-3 w-3 shrink-0 rounded-full ${valor.color}`}
                     />
