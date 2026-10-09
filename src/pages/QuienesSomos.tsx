@@ -11,25 +11,25 @@ const ICONOS = {
 };
 
 const VALORES = [
-  {
-    nombre: "Confianza",
+  { 
+    nombre: "Confianza", 
     color: "bg-[--salvia]",
-    descripcion: "Creamos un espacio seguro donde puedes ser auténtico",
+    descripcion: "Creamos un espacio seguro donde puedes ser auténtico"
   },
-  {
-    nombre: "Escucha Activa",
+  { 
+    nombre: "Escucha Activa", 
     color: "bg-[--azul]",
-    descripcion: "Te escuchamos sin prejuicios para entender tus necesidades",
+    descripcion: "Te escuchamos sin prejuicios para entender tus necesidades"
   },
-  {
-    nombre: "Acompañamiento",
+  { 
+    nombre: "Acompañamiento", 
     color: "bg-[--verde]",
-    descripcion: "Cada paso del camino, te acompañamos con dedicación",
+    descripcion: "Cada paso del camino, te acompañamos con dedicación"
   },
-  {
-    nombre: "Excelencia",
+  { 
+    nombre: "Excelencia", 
     color: "bg-[--naranja]",
-    descripcion: "Nos comprometemos con los más altos estándares de calidad",
+    descripcion: "Nos comprometemos con los más altos estándares de calidad"
   },
 ];
 
@@ -75,7 +75,7 @@ export default function QuienesSomos() {
             })}
           </div>
 
-          {/* Main Content */}
+          {/* Main Content Grid */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Misión */}
             <div className="group rounded-2xl border-l-4 border-[--ink] bg-[--panel] p-6 transition-colors hover:border-[--salvia] md:p-8">
@@ -158,9 +158,11 @@ export default function QuienesSomos() {
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Sección adicional: Por qué elegirnos */}
-          <div className="mt-16 rounded-2xl border border-[--line] bg-gradient-to-r from-[--salvia]/5 to-[--azul]/5 p-8 md:p-12">
+        {/* Sección adicional: Por qué elegirnos - ANCHO COMPLETO */}
+        <div className="mt-16 bg-gradient-to-r from-[--salvia]/5 to-[--azul]/5">
+          <div className="mx-auto max-w-7xl px-4 py-8 md:py-12">
             <h2 className="mb-8 text-center font-serif text-3xl font-bold text-[--ink] md:text-4xl">
               ¿Por qué elegirnos?
             </h2>
@@ -194,7 +196,9 @@ export default function QuienesSomos() {
               </div>
             </div>
           </div>
+        </div>
 
+        <div className="mx-auto max-w-7xl px-4">
           {/* Team Section */}
           <div className="mt-20 grid gap-6 md:mt-24 md:grid-cols-2 lg:grid-cols-4">
             {[
