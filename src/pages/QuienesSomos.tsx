@@ -54,6 +54,7 @@ export default function QuienesSomos() {
               Un espacio donde mente, voz, cuerpo y alimento encuentran equilibrio.
             </p>
           </div>
+        </div>
 
           {/* Discipline Logos Bar */}
           <div className="mb-16 grid grid-cols-2 justify-center gap-4 md:grid-cols-4">
@@ -76,89 +77,111 @@ export default function QuienesSomos() {
           </div>
 
           {/* Main Content Grid */}
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {/* Misión */}
-            <div className="group rounded-2xl border-l-4 border-[--ink] bg-[--panel] p-6 transition-colors hover:border-[--salvia] md:p-8">
-              <h2 className="mb-4 font-serif text-2xl font-bold text-[--ink] transition-colors group-hover:text-[--salvia] md:text-3xl">
-                Nuestra Misión
-              </h2>
-              <p className="mb-6 leading-relaxed text-[--soft]">
-                Ofrecer una atención integral que una psicología, logopedia, fisioterapia y nutrición en un solo lugar, facilitando un enfoque holístico del bienestar para adultos y niños.
-              </p>
-              <ul className="space-y-2 text-[--soft]/90">
-                <li className="flex items-start">
-                  <span className="mr-3 mt-1 h-3 w-3 shrink-0 rounded-full bg-[--salvia]" />
-                  Atención integral en un solo espacio
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 mt-1 h-3 w-3 shrink-0 rounded-full bg-[--azul]" />
-                  Enfoque holístico y personalizado
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 mt-1 h-3 w-3 shrink-0 rounded-full bg-[--verde]" />
-                  Adaptado a cada etapa de la vida
-                </li>
-              </ul>
-            </div>
+<div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+  {/* Misión */}
+  <div className="group rounded-2xl border-l-4 border-[--ink] bg-[--panel] p-6 transition-colors hover:border-[--salvia] md:p-8">
+    <h2 className="mb-4 font-serif text-2xl font-bold text-[--ink] transition-colors group-hover:text-[--salvia] md:text-3xl">
+      Nuestra Misión
+    </h2>
+    <p className="mb-6 leading-relaxed text-[--soft]">
+      Ofrecer una atención integral que una psicología, logopedia, fisioterapia y nutrición en un solo lugar, facilitando un enfoque holístico del bienestar para adultos y niños.
+    </p>
+    <ul className="space-y-2 text-[--soft]/90">
+      <li className="flex items-start">
+        <span className="mr-3 mt-1 h-3 w-3 shrink-0 rounded-full bg-[--salvia]" />
+        Atención integral en un solo espacio
+      </li>
+      <li className="flex items-start">
+        <span className="mr-3 mt-1 h-3 w-3 shrink-0 rounded-full bg-[--azul]" />
+        Enfoque holístico y personalizado
+      </li>
+      <li className="flex items-start">
+        <span className="mr-3 mt-1 h-3 w-3 shrink-0 rounded-full bg-[--verde]" />
+        Adaptado a cada etapa de la vida
+      </li>
+    </ul>
+  </div>
 
-            {/* Visión */}
-            <div className="group rounded-2xl border-l-4 border-[--azul] bg-[--panel] p-6 transition-colors hover:border-[--azul]/80 md:p-8">
-              <h2 className="mb-4 font-serif text-2xl font-bold text-[--ink] transition-colors group-hover:text-[--azul] md:text-3xl">
-                Nuestra Visión
-              </h2>
-              <p className="mb-6 leading-relaxed text-[--soft]">
-                Ser el referente en La Puebla de Alfindén de atención multidisciplinar cercana, profesional y de calidad, donde mente, cuerpo y lenguaje trabajan en armonía.
-              </p>
-              <ul className="space-y-2 text-[--soft]/90">
-                <li className="flex items-start">
-                  <span className="mr-3 mt-1 h-3 w-3 shrink-0 rounded-full bg-[--salvia]" />
-                  Referente regional en bienestar integrado
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 mt-1 h-3 w-3 shrink-0 rounded-full bg-[--verde]" />
-                  Mente y cuerpo en armonía
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 mt-1 h-3 w-3 shrink-0 rounded-full bg-[--naranja]" />
-                  Acceso universal a calidad
-                </li>
-              </ul>
-            </div>
+  {/* Visión */}
+  <div className="group rounded-2xl border-l-4 border-[--azul] bg-[--panel] p-6 transition-colors hover:border-[--azul]/80 md:p-8">
+    <h2 className="mb-4 font-serif text-2xl font-bold text-[--ink] transition-colors group-hover:text-[--azul] md:text-3xl">
+      Nuestra Visión
+    </h2>
+    <p className="mb-6 leading-relaxed text-[--soft]">
+      Ser el referente en La Puebla de Alfindén de atención multidisciplinar cercana, profesional y de calidad, donde mente, cuerpo y lenguaje trabajan en armonía.
+    </p>
+    <ul className="space-y-2 text-[--soft]/90">
+      <li className="flex items-start">
+        <span className="mr-3 mt-1 h-3 w-3 shrink-0 rounded-full bg-[--salvia]" />
+        Referente regional en bienestar integrado
+      </li>
+      <li className="flex items-start">
+        <span className="mr-3 mt-1 h-3 w-3 shrink-0 rounded-full bg-[--verde]" />
+        Mente y cuerpo en armonía
+      </li>
+      <li className="flex items-start">
+        <span className="mr-3 mt-1 h-3 w-3 shrink-0 rounded-full bg-[--naranja]" />
+        Acceso universal a calidad
+      </li>
+    </ul>
+  </div>
 
-            {/* Valores */}
-            <div className="lg:col-span-2 rounded-2xl border-l-4 border-[--salvia] bg-[--panel] p-6 md:p-8">
-              <div className="mb-8">
-                <h2 className="font-serif text-2xl font-bold text-[--ink] md:text-3xl">
-                  Nuestros Valores
-                </h2>
-                <p className="mt-2 text-[--soft]">
-                  Los pilares que guían cada interacción y decisión en nuestro centro
-                </p>
-              </div>
+  {/* Valores */}
+  <div className="group rounded-2xl border-l-4 border-[--salvia] bg-[--panel] p-6 transition-colors hover:border-[--salvia]/80 md:p-8">
+    <h2 className="mb-4 font-serif text-2xl font-bold text-[--ink] transition-colors group-hover:text-[--salvia] md:text-3xl">
+      Nuestros Valores
+    </h2>
+    <p className="mb-6 leading-relaxed text-[--soft]">
+      Los pilares que guían cada interacción y decisión en nuestro centro, comprometidos con tu bienestar integral.
+    </p>
+    <ul className="space-y-2 text-[--soft]/90">
+      <li className="flex items-start">
+        <span className="mr-3 mt-1 h-3 w-3 shrink-0 rounded-full bg-[--salvia]" />
+        Confianza y seguridad
+      </li>
+      <li className="flex items-start">
+        <span className="mr-3 mt-1 h-3 w-3 shrink-0 rounded-full bg-[--azul]" />
+        Escucha atenta y empática
+      </li>
+      <li className="flex items-start">
+        <span className="mr-3 mt-1 h-3 w-3 shrink-0 rounded-full bg-[--verde]" />
+        Acompañamiento profesional
+      </li>
+      <li className="flex items-start">
+        <span className="mr-3 mt-1 h-3 w-3 shrink-0 rounded-full bg-[--naranja]" />
+        Excelencia en calidad
+      </li>
+    </ul>
+  </div>
 
-              <div className="grid gap-4 md:grid-cols-2">
-                {VALORES.map((valor) => {
-                  return (
-                    <div
-                      key={valor.nombre}
-                      className="group rounded-xl border border-[--line] bg-gradient-to-br from-[--bg] to-transparent p-5 transition-all duration-300 hover:border-[--salvia]/50 hover:shadow-lg hover:shadow-[--salvia]/10"
-                    >
-                      <div className="mb-3 flex items-center gap-3">
-                        <div className={`rounded-lg ${valor.color} p-3 transition-transform group-hover:scale-110`} />
-                        <h3 className="font-semibold text-[--ink] transition-colors group-hover:text-[--salvia]">
-                          {valor.nombre}
-                        </h3>
-                      </div>
-                      <p className="text-sm leading-relaxed text-[--soft] transition-colors group-hover:text-[--soft]/95">
-                        {valor.descripcion}
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
+  {/* Nuestro Compromiso */}
+  <div className="group rounded-2xl border-l-4 border-[--verde] bg-[--panel] p-6 transition-colors hover:border-[--verde]/80 md:p-8">
+    <h2 className="mb-4 font-serif text-2xl font-bold text-[--ink] transition-colors group-hover:text-[--verde] md:text-3xl">
+      Nuestro Compromiso
+    </h2>
+    <p className="mb-6 leading-relaxed text-[--soft]">
+      Nos comprometemos a ofrecerte un espacio seguro, profesional y acogedor donde tu bienestar es nuestra prioridad fundamental.
+    </p>
+    <ul className="space-y-2 text-[--soft]/90">
+      <li className="flex items-start">
+        <span className="mr-3 mt-1 h-3 w-3 shrink-0 rounded-full bg-[--salvia]" />
+        Terapia basada en evidencia
+      </li>
+      <li className="flex items-start">
+        <span className="mr-3 mt-1 h-3 w-3 shrink-0 rounded-full bg-[--azul]" />
+        Seguimiento personalizado
+      </li>
+      <li className="flex items-start">
+        <span className="mr-3 mt-1 h-3 w-3 shrink-0 rounded-full bg-[--verde]" />
+        Resultados medibles
+      </li>
+      <li className="flex items-start">
+        <span className="mr-3 mt-1 h-3 w-3 shrink-0 rounded-full bg-[--naranja]" />
+        Mejora continua
+      </li>
+    </ul>
+  </div>
+</div>
 
         {/* Sección adicional: Por qué elegirnos - ANCHO COMPLETO */}
         <div className="mt-16 bg-gradient-to-r from-[--salvia]/5 to-[--azul]/5">
