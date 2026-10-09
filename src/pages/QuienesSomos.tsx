@@ -140,9 +140,7 @@ export default function QuienesSomos() {
                       <p className="font-medium text-[--ink]">
                         {valor.nombre}
                       </p>
-                      <p className="mt-0.5 text-xs text-[--soft]/80">
-                        Principio rector de nuestra práctica
-                      </p>
+                      
                     </div>
                   </div>
                 ))}
