@@ -11,10 +11,27 @@ const ICONOS = {
 };
 
 const VALORES = [
-  { nombre: "Confianza", color: "bg-[--salvia]"},
-  { nombre: "Escucha", color: "bg-[--azul]"},
-  { nombre: "Acompañamiento", color: "bg-[--verde]"},
-  { nombre: "Calidad", color: "bg-[--naranja]"},];
+  { 
+    nombre: "Confianza", 
+    color: "bg-[--salvia]",
+    descripcion: "Creamos un espacio seguro donde puedes ser auténtico"
+  },
+  { 
+    nombre: "Escucha Activa", 
+    color: "bg-[--azul]",
+    descripcion: "Te escuchamos sin prejuicios para entender tus necesidades"
+  },
+  { 
+    nombre: "Acompañamiento", 
+    color: "bg-[--verde]",
+    descripcion: "Cada paso del camino, te acompañamos con dedicación"
+  },
+  { 
+    nombre: "Excelencia", 
+    color: "bg-[--naranja]",
+    descripcion: "Nos comprometemos con los más altos estándares de calidad"
+  },
+];
 
 export default function QuienesSomos() {
   useTitle("Quiénes somos - Sinestesya");
@@ -122,28 +139,75 @@ export default function QuienesSomos() {
               </ul>
             </div>
 
-            {/* Valores */}
-            <div className="group rounded-2xl border-l-4 border-[--salvia] bg-[--panel] p-6 transition-colors hover:border-[--salvia]/80 md:p-8">
-              <h2 className="mb-4 font-serif text-2xl font-bold text-[--ink] transition-colors group-hover:text-[--salvia] md:text-3xl">
-                Nuestros Valores
-              </h2>
-              <div className="grid grid-cols-2 gap-4">
-                {VALORES.map((valor) => (
-                  <div
-                    key={valor.nombre}
-                    className="flex items-start rounded-lg p-3 transition-colors hover:bg-[--line]/50"
-                  >
-                    <span
-                      className={`mr-3 mt-1 h-3 w-3 shrink-0 rounded-full ${valor.color}`}
-                    />
-                    <div>
-                      <p className="font-medium text-[--ink]">
-                        {valor.nombre}
+            {/* Valores  */}
+            <div className="lg:col-span-2 rounded-2xl border-l-4 border-[--salvia] bg-[--panel] p-6 md:p-8">
+              <div className="mb-8">
+                <h2 className="font-serif text-2xl font-bold text-[--ink] md:text-3xl">
+                  Nuestros Valores
+                </h2>
+                <p className="mt-2 text-[--soft]">
+                  Los pilares que guían cada interacción y decisión en nuestro centro
+                </p>
+              </div>
+              
+              <div className="grid gap-4 md:grid-cols-2">
+                {VALORES.map((valor) => {
+                  
+                  return (
+                    <div
+                      key={valor.nombre}
+                      className="group rounded-xl border border-[--line] bg-gradient-to-br from-[--bg] to-transparent p-5 transition-all duration-300 hover:border-[--salvia]/50 hover:shadow-lg hover:shadow-[--salvia]/10"
+                    >
+                      <div className="mb-3 flex items-center gap-3">
+                        <div className={`rounded-lg ${valor.color} p-3 transition-transform group-hover:scale-110`}>
+                         
+                        </div>
+                        <h3 className="font-semibold text-[--ink] group-hover:text-[--salvia] transition-colors">
+                          {valor.nombre}
+                        </h3>
+                      </div>
+                      <p className="text-sm leading-relaxed text-[--soft] group-hover:text-[--soft]/95 transition-colors">
+                        {valor.descripcion}
                       </p>
-                      
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+           {/* Sección adicional: Por qué elegirnos */}
+          <div className="mt-16 rounded-2xl border border-[--line] bg-gradient-to-r from-[--salvia]/5 to-[--azul]/5 p-8 md:p-12">
+            <h2 className="mb-8 text-center font-serif text-3xl font-bold text-[--ink] md:text-4xl">
+              ¿Por qué elegirnos?
+            </h2>
+            <div className="grid gap-6 md:grid-cols-3">
+              <div className="text-center">
+                <div className="mb-4 inline-block rounded-full bg-[--salvia]/10 p-4">
+                  
+                </div>
+                <h3 className="mb-2 font-semibold text-[--ink]">Equipo Multidisciplinario</h3>
+                <p className="text-sm text-[--soft]">
+                  Profesionales especializados que trabajan coordinadamente por tu bienestar integral
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="mb-4 inline-block rounded-full bg-[--azul]/10 p-4">
+                  
+                </div>
+                <h3 className="mb-2 font-semibold text-[--ink]">Enfoque Personalizado</h3>
+                <p className="text-sm text-[--soft]">
+                  Cada plan de tratamiento se adapta a tus necesidades específicas y objetivos
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="mb-4 inline-block rounded-full bg-[--verde]/10 p-4">
+                  
+                </div>
+                <h3 className="mb-2 font-semibold text-[--ink]">Resultados Comprobados</h3>
+                <p className="text-sm text-[--soft]">
+                  Metodologías basadas en evidencia científica que generan cambios reales
+                </p>
               </div>
             </div>
           </div>
