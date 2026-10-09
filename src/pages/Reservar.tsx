@@ -54,7 +54,7 @@ export default function Reservar() {
   }
 
   const chip = (on: boolean, onClick: () => void, children: React.ReactNode, extra = '', disabled = false) => (
-    <button type="button" aria-pressed={on} disabled={disabled} onClick={onClick} className={`chip ${on ? (area?.bg ?? 'bg-ocre') : ''} ${extra}`}>{children}</button>
+    <button type="button" aria-pressed={on} disabled={disabled} onClick={onClick} className={`chip ${on ? (area?.bg ?? 'bg-bosque') : ''} ${extra}`}>{children}</button>
   )
   const resumen = (
     <dl className="m-0">
@@ -65,7 +65,7 @@ export default function Reservar() {
   )
 
   if (done) return (
-    <div className="wrap mt-14"><div className="max-w-[720px] rounded-[28px] bg-salvia/25 p-8">
+    <div className="wrap mt-14"><div className="max-w-[720px] rounded-[28px] bg-amarillo/25 p-8">
       <span className="lab">Solicitud recibida</span>
       <h1 className="my-3 text-[clamp(2rem,5vw,3rem)]">Gracias, {d.nombre.split(' ')[0]}.</h1>
       <p>Hemos recibido tu solicitud. El equipo te confirmará el hueco por teléfono o email en el mismo día laborable.</p>

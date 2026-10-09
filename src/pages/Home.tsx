@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import AreaCard from '../components/AreaCard'
-import Logo from '../components/Logo'
 import Wave from '../components/Wave'
 import { AREAS } from '../services/areas'
 import { useTitle } from '../hooks/useTitle'
@@ -19,7 +18,13 @@ export default function Home() {
             <a href="#servicios" className="btn btn-alt">Ver servicios</a>
           </div>
         </div>
-        <div className="grid place-items-center rounded-[40px] bg-panel p-8"><div className="w-full max-w-[420px]"><Logo /></div></div>
+        <div className="grid place-items-center rounded-[40px] bg-panel p-8">
+          <div className="flex flex-col items-center gap-4 text-center p-6">
+            <p className="text-3xl font-light text-bosque mt-2">Calle Fuertes, 1</p>
+            <p className="text-sm text-[#66726A]">La Puebla de Alfindén, Zaragoza</p>
+            <p className="text-xs text-[#788A99]">Código postal 50171</p>
+          </div>
+        </div>
       </div>
       <Wave className="mt-16 block h-auto w-full" />
 
@@ -30,8 +35,8 @@ export default function Home() {
       </section>
 
       <section className="mt-20 grid gap-4 md:grid-cols-2">
-        <div className="rounded-[28px] bg-salvia/25 p-8"><span className="lab">Adultos</span><h2 className="mt-2">Para ti</h2><p>Consulta individual con tiempo para escucharte y un plan que encaje con tu día a día.</p></div>
-        <div className="rounded-[28px] bg-terracota/25 p-8"><span className="lab">Niños y adolescentes</span><h2 className="mt-2">Para los más pequeños</h2><p>Sesiones adaptadas a su edad, con juego y con las familias siempre dentro del proceso.</p></div>
+        <div className="rounded-[28px] bg-amarillo/25 p-8"><span className="lab">Adultos</span><h2 className="mt-2">Para ti</h2><p>Consulta individual con tiempo para escucharte y un plan que encaje con tu día a día.</p></div>
+        <div className="rounded-[28px] bg-azul/25 p-8"><span className="lab">Niños y adolescentes</span><h2 className="mt-2">Para los más pequeños</h2><p>Sesiones adaptadas a su edad, con juego y con las familias siempre dentro del proceso.</p></div>
       </section>
 
       <section className="mt-20">
