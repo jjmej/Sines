@@ -1,28 +1,31 @@
 # Sinestesya · Centro de bienestar
 
 Web de Sinestesya (psicología, logopedia, fisioterapia y nutrición; adultos y niños) con reserva online y panel para el equipo.
-Stack: Vite + React + TypeScript + Tailwind · Supabase (BD y acceso) · Vercel (hosting y funciones `api/`).
+Stack: Vite + React + TypeScript + Tailwind · Supabase (BD y acceso) · Cloudflare Pages (hosting y funciones `functions/`).
 
 ## Estructura
 - `src/pages` · `Home`, `Servicio` (una página por especialidad, con su color), `Reservar`, `admin/Panel`
 - `src/services` · datos de las áreas y llamadas a la API / Supabase
-- `api/` · funciones serverless: `reservar` (valida y guarda) y `disponibilidad` (horas ocupadas)
+- `functions/` · Pages Functions: `api/reservar` (valida y llama a Web1) y `api/disponibilidad` (horas ocupadas)
+- `public/` · `_redirects` (SPA), `_headers` (cabeceras de seguridad) y `_routes.json` (solo `/api/*` invoca functions)
 - `supabase/migrations` · tabla `reservas` con RLS
+- `api/` + `vercel.json` · compatibilidad con Vercel, **temporal** como red de seguridad; se eliminará tras verificar el despliegue en Cloudflare
 
 ## Desarrollo
 ```bash
 npm install
-cp .env.example .env     # rellena las variables
-npm run dev              # web en http://localhost:5173
-npx vercel dev           # opcional: web + funciones api/ en local
+cp .env.example .env             # variables públicas VITE_* para npm run dev
+cp .dev.vars.example .dev.vars   # secretos del servidor para preview con functions
+npm run dev                      # web en http://localhost:5173 (sin API)
+npm run preview:cf               # build + wrangler pages dev: web y functions en local
 ```
 `npm run build` comprueba tipos y genera `dist/`.
 
 ## Puesta en producción
 1. **Supabase**: crea un proyecto y ejecuta `supabase/migrations/001_reservas.sql` en el SQL Editor.
    En *Authentication > Providers > Email* desactiva *Allow new users to sign up*, y crea a mano los usuarios del equipo (*Authentication > Users*).
-2. **Vercel**: importa el repositorio (preset Vite) y añade las variables de `.env.example`:
-   `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`; opcionales para el aviso por email: `RESEND_API_KEY`, `NOTIFY_EMAIL`, `MAIL_FROM`.
+2. **Cloudflare Pages**: crea el proyecto desde el repositorio (Workers & Pages > Create > Pages) con build command `npm run build` y directorio de salida `dist`, y añade las variables de entorno (Production y Preview):
+   `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `SUPABASE_URL`, `SUPABASE_SECRET_KEY`, `WEB1_API_URL` (debe ser **HTTPS**), `WEB1_API_SECRET`.
 3. **Dominio**: cámbialo en `public/robots.txt` y `public/sitemap.xml` (ahora `sinestesya.es`).
 4. Panel del equipo: `/admin` (confirmar o cancelar reservas; cancelar libera el hueco).
 
